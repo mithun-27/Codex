@@ -5,8 +5,10 @@
 
 Codex AGI is a modern, privacy-focused code analysis tool that helps developers understand complex code snippets in seconds. Instead of scanning your entire file system, it provides a secure **AI Playground** where you can paste code, select your language, and receive instant, plain-English explanations and improvement suggestions.
 
-![Codex Dashboard](https://via.placeholder.com/1200x600?text=Codex+AGI+Dashboard+Screenshot)
-*(Replace this link with your actual screenshot path, e.g., `./screenshots/dashboard.png`)*
+### Codex Dashboard
+
+<img width="1917" height="865" alt="image" src="https://github.com/user-attachments/assets/1255e3a2-658c-4257-94e7-85ebf300e52e" />
+
 
 ## ✨ Features
 
@@ -74,9 +76,14 @@ Codex AGI is a modern, privacy-focused code analysis tool that helps developers 
 
 ## 📸 Screenshots
 
-| Code Input | AI Explanation |
-|:---:|:---:|
-| ![Input](https://via.placeholder.com/600x400?text=Code+Editor) | ![Output](https://via.placeholder.com/600x400?text=AI+Analysis) |
+### code input:
+<img width="1896" height="856" alt="image" src="https://github.com/user-attachments/assets/70db0b4e-eb3d-4456-b133-cbd40e9e3205" />
+
+---
+### code output:
+<img width="1917" height="865" alt="image" src="https://github.com/user-attachments/assets/aecdd5da-0a68-454f-a73d-038ffe062872" />
+
+
 
 ## 🤝 Contributing
 
@@ -88,9 +95,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 *Built with ❤️ by [mithun-27](https://github.com/mithun-27)*
