@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import LoadingAnimation from './LoadingAnimation';
 import './AnalysisPanel.css';
 
 const AnalysisPanel = ({ filePath, code }) => {
@@ -56,19 +57,34 @@ const AnalysisPanel = ({ filePath, code }) => {
 
             <div style={{ flex: 1, padding: '1rem', overflowY: 'auto' }}>
                 {!analysis[activeTab] && !loading && (
-                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                        <p style={{ color: 'var(--text-tertiary)', marginBottom: '1rem' }}>
+                    <div style={{
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        color: 'var(--text-tertiary)',
+                        textAlign: 'center'
+                    }}>
+                        <p style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>
                             {activeTab === 'explain' ? 'Get a detailed plain-English explanation of this code.' : 'Get suggestions to optimize and improve this code.'}
                         </p>
                         <button
                             onClick={() => handleAnalyze(activeTab)}
                             disabled={!filePath && !code}
                             style={{
-                                background: `var(--accent-${activeTab === 'explain' ? 'primary' : 'secondary'})`,
+                                background: activeTab === 'explain'
+                                    ? 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))'
+                                    : 'linear-gradient(135deg, var(--accent-secondary), var(--accent-primary))',
                                 color: 'white',
-                                padding: '0.6rem 1.2rem',
+                                padding: '0.8rem 2rem',
                                 borderRadius: 'var(--radius-md)',
-                                boxShadow: 'var(--shadow-glow)',
+                                fontSize: '1rem',
+                                fontWeight: '600',
+                                border: 'none',
+                                cursor: 'pointer',
+                                boxShadow: '0 4px 15px rgba(124, 58, 237, 0.3)',
+                                transition: 'all 0.2s',
                                 opacity: (filePath || code) ? 1 : 0.5
                             }}
                         >
@@ -78,10 +94,7 @@ const AnalysisPanel = ({ filePath, code }) => {
                 )}
 
                 {loading && (
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                        <div className="glow-effect" style={{ width: '40px', height: '40px', background: 'white', borderRadius: '50%', opacity: 0.1 }}></div>
-                        <span style={{ marginLeft: '1rem' }}>Analyzing...</span>
-                    </div>
+                    <LoadingAnimation />
                 )}
 
                 {analysis[activeTab] && !loading && (

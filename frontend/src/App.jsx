@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import LanguageSelector from './components/LanguageSelector';
 import CodeEditor from './components/CodeEditor';
 import AnalysisPanel from './components/AnalysisPanel';
+import logo from './assets/logo.png';
 
 function App() {
   const [code, setCode] = useState('');
@@ -19,7 +20,7 @@ function App() {
     <div className="app-container" style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       {/* Header */}
       <header style={{
-        height: '60px',
+        height: '70px', // Increased height for logo
         padding: '0 2rem',
         display: 'flex',
         justifyContent: 'space-between',
@@ -29,8 +30,18 @@ function App() {
         backdropFilter: 'blur(10px)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div style={{ width: '24px', height: '24px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', borderRadius: '6px' }}></div>
-          <h1 style={{ fontSize: '1.2rem', fontWeight: '700', letterSpacing: '0.05em' }}>CODEX_AGI</h1>
+          <img src={logo} alt="Codex AGI Logo" style={{ height: '45px', objectFit: 'contain' }} />
+          <h1 style={{
+            fontSize: '1.5rem',
+            fontWeight: '800',
+            letterSpacing: '0.05em',
+            background: 'linear-gradient(to right, #fff, var(--accent-secondary))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textShadow: '0 0 20px rgba(139, 92, 246, 0.3)'
+          }}>
+            CODEX_AGI
+          </h1>
         </div>
         <div style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)' }}>
           SYSTEM: <span style={{ color: serverStatus === 'healthy' ? '#4ade80' : '#ef4444' }}>{serverStatus.toUpperCase()}</span>

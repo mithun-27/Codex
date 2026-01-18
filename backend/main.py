@@ -4,6 +4,9 @@ from pydantic import BaseModel
 import uvicorn
 import os
 import glob
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
